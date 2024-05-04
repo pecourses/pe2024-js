@@ -1,4 +1,4 @@
-// JS - мова з динамічною (качина) типізацією
+// JS - високорівнева, інтерпретована, скриптова, мультипарадигмова мова з динамічною (качина) типізацією
 
 // js виконується браузером (движком)
 
@@ -82,3 +82,56 @@ alert("Hello World 2");
 // symbol
 
 // не примітив - object
+
+// Користувач замовив 2 од. товару по 500 грн. кожна і
+// 3 од. товару по 200 грн кожна
+// Скільки всього заплатив користувач
+
+// let totalPrice = 2 * 500 + 3 * 200;
+// console.log("Total:", totalPrice, "hrn");
+
+// let amount1 = 2;
+// let price1 = 500;
+// let amount2 = 3;
+let price2 = 200;
+
+// let totalPrice = amount1 * price1 + amount2 * price2;
+// console.log("Total:", totalPrice, "hrn");
+
+// Task: Покупець замовив 1й товар ціною 600 зі знижкою 10%
+// та 2й товар ціною 800 зі знижкою 15%
+// Яка сумарна вартість покупок?
+// let firstItemPrice = 600;
+// let firstItemDiscount = 0.1;
+// let secondItemPrice = 800;
+// let secondItemDiscount = 0.15;
+// let orderPrice =
+//   firstItemPrice * (1 - firstItemDiscount) +
+//   secondItemPrice * (1 - secondItemDiscount);
+// console.log(orderPrice);
+
+// Користувач вводе ім'я і прізвище.
+// Додати в розмітку в форматі "Ім'я Прізвище" в h2
+
+// const firstName = prompt("Input name:", "anonimus");
+// const lastName = prompt("Input surname:", "noname");
+
+// alert(firstName + " " + lastName);
+
+// document.write("<h2>" + firstName + " " + lastName + "</h2>");
+
+// Користувач вводе два числа
+// Вивести їх суму
+// const firstNumber = Number(prompt("1 number:", "0"));
+// const secondNumber = +prompt("2 number:", "0");
+// const sum = firstNumber + secondNumber;
+// console.log("sum :>> ", sum);
+
+// Користувач вводе кількість товару
+// Вартість - 200
+// Розрахувати сумарну вартість покупки
+const amountOfItems = +prompt("Input amount of items:");
+const itemPrice = 200;
+
+console.log("Order price:", amountOfItems * itemPrice);
+2 ** (3 ** 2); // 8**2=64 2**9=512
