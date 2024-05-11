@@ -163,21 +163,135 @@
 //     гілка true
 // }
 
-const age = 16;
-if (age < 18) {
-  alert("У вас обмежений доступ для послуг порталу");
+// const age = 16;
+// if (age < 18) {
+//   alert("У вас обмежений доступ для послуг порталу");
+// }
+
+// document.write("<p>Вітаємо на порталі</p>");
+
+// const age1 = Number(prompt("Input age", "0"));
+
+// if (Number.isInteger(age1)) {
+//   console.log("Correct");
+// } else {
+//   console.log("Incorrect. Input again");
+// }
+
+// if (!Number.isInteger(age1) {
+//   console.log("Incorrect. Input again");
+// }
+
+// Логічні (булеві) операції
+
+// умова І умова   - умова && умова    - age >= 18 && isVactinated
+// умова АБО умова - умова || умова    - age < 18  || isVactinated
+// НЕ умова        - !умова
+
+console.group("Таблиця істинності &&:");
+
+console.log("true && true :>> ", true && true); // => true, якщо всі true
+console.log("false && false :>> ", false && false);
+console.log("true && false :>> ", true && false);
+console.log("false && true :>> ", false && true);
+
+console.groupEnd();
+
+console.group("Таблиця істинності ||:");
+
+console.log("true || true :>> ", true || true);
+console.log("false || false :>> ", false || false); // => false, якщо всі false
+console.log("true || false :>> ", true || false);
+console.log("false || true :>> ", false || true);
+
+console.groupEnd();
+
+console.group("Таблиця істинності !:");
+
+console.log("!true :>> ", !true);
+console.log("!false  :>> ", !false);
+
+console.groupEnd();
+
+// Вивести привітання
+// Mr - для чоловіків
+// Mrs - для заміжніх жінок
+// Ms - для незаміжніх жінок
+
+// const isMale = true;
+// const isMarried = false;
+// const name = "Test";
+
+// if (isMale) {
+//   document.write(`<p>Hello Mr ${name}`);
+// } else if (!isMale && isMarried) {
+//   document.write(`<p>Hello Mrs ${name}`);
+// } else {
+//   document.write(`<p>Hello Ms ${name}`);
+// }
+
+// let appeal = "";
+
+// if (isMale) {
+//   appeal = "Mr";
+// } else if (isMarried) {
+//   appeal = "Mrs";
+// } else {
+//   appeal = "Ms";
+// }
+
+// document.write(`<p>Hello ${appeal} ${name}</p>`);
+
+// Вартість price
+// Надати знижку неповнолітнім і пенсіонерам
+// та вивести остаточну суму до сплати
+
+const userAge = 65;
+const fullPrice = 500;
+let discount = 0;
+
+if (userAge < 18 || userAge >= 65) {
+  discount = 100;
 }
 
-document.write("<p>Вітаємо на порталі</p>");
+const resultPrice = fullPrice - discount;
+document.write(`<p>${resultPrice}</p>`);
 
-const age1 = Number(prompt("Input age", "0"));
+// видати повідомлення про знижку, якщо пт 13
+const day = "friday";
+const date = 13;
 
-if (Number.isInteger(age1)) {
+if (day === "friday" && date === 13) {
+  document.write("<p>Вітаємо, у Вас знижка 10%</p>");
+}
+
+// NaN === NaN => false
+// Number.isNaN()
+
+// Перевірка
+let value = 0;
+
+// if (value !== undefined && value !== null) {
+//   console.log("Correct");
+// }
+
+// false, null, undefined, '', 0/-0, NaN -- falsy-значення
+if (value) {
   console.log("Correct");
-} else {
-  console.log("Incorrect. Input again");
 }
 
-if (Number.isInteger(age1) === false) {
-  console.log("Incorrect. Input again");
-}
+const port = 0;
+
+// let PORT;
+
+// if(port) {
+//     PORT = port;
+// } else {
+//     PORT = 5500;
+// }
+
+const PORT = port || 5500; //  false, null, undefined, '', 0/-0, NaN
+const PORT1 = port ?? 5500; //  null, undefined (nullish)
+
+console.log("PORT :>> ", PORT);
+console.log("PORT1 :>> ", PORT1);
