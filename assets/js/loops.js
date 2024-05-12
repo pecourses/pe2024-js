@@ -99,13 +99,13 @@
 
 // Вивести числа з 50 до 40 do..while
 
-let currentPage = 50;
-const END_PAGE = 40;
+// let currentPage = 50;
+// const END_PAGE = 40;
 
-do {
-  console.log(`Current page ${currentPage}`);
-  currentPage--;
-} while (END_PAGE <= currentPage);
+// do {
+//   console.log(`Current page ${currentPage}`);
+//   currentPage--;
+// } while (END_PAGE <= currentPage);
 
 // Користувач має 3 спроби ввести пароль
 // Якщо пароль вірний, то вивести "Пароль вірний"
@@ -141,3 +141,5 @@ do {
 } while (++currentTry <= TRY_LIMIT && !isPasswordCorrect);
 
 console.log(`Password is ${isPasswordCorrect ? "correct" : "wrong"}`);
+
+//
