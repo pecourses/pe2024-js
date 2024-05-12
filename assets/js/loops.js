@@ -156,9 +156,9 @@
 //   console.log(startPage);
 // }
 
-// let startPage=1
-// while ( startPage<=stopPage) {
-//   body
+// let startPage = 1;
+// while (startPage <= stopPage) {
+//   body;
 //   startPage++;
 // }
 
@@ -182,3 +182,49 @@
 // 1 (умова продовження циклу)  якщо умова істинна, то виконуємо тіло циклу 2, інакше вихід
 // 2 (тіло циклу)               виконується, якщо умова 1 істинна
 // 3 (зміна лічильника)         виконується після кожної ітерації. Потім перехід на 1
+
+// якщо відома кількість ітерацій => for
+// інакше якщо тіло циклу має виконатися хоч 1 раз => do..while
+// інакше while
+
+// Знайти суму чисел від 1 до 20
+// 1+2+3+4+....+20
+// const startNumber = 1;
+// const endNumber = 3;
+// let sum = 0; // 0+1+2+... // accumulator
+
+// for (let i = startNumber; i <= endNumber; i++) {
+//   sum = sum + i;
+// }
+// console.log(sum);
+
+// 0+1 = 1
+// 1+2 = 3
+// 3+3 = 6
+
+// Накопичити добуток (парних) чисел від 5 до 12 (6 8 10 12 = 5760)
+// 1*6*8*...
+
+// const startNumber = 5;
+// const END_NUM = 12;
+
+// let dob = 1;
+
+// for (let i = startNumber; i <= END_NUM; i++) {
+//   dob *= i;
+// }
+
+// console.log(dob);
+
+// const startNumber = 5;
+// const endNumber = 12;
+// let mul = 1;
+
+// for (let i = startNumber; i <= endNumber; i++) {
+//   if (i % 2 === 0) {
+//     mul *= i;
+//   }
+// }
+// console.log("Mul:", mul);
+
+// сформувати табличку з стовпчиками - датами від поточної до кінця місяця
