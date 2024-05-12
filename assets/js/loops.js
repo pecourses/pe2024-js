@@ -131,15 +131,54 @@
 //   console.log("Password is wrong");
 // }
 
-const RIGHT_PASSWORD = "qwerty";
-const TRY_LIMIT = 3;
-let isPasswordCorrect = false;
-let currentTry = 1;
+// const RIGHT_PASSWORD = "qwerty";
+// const TRY_LIMIT = 3;
+// let isPasswordCorrect = false;
+// let currentTry = 1;
 
-do {
-  isPasswordCorrect = prompt("Input password") === RIGHT_PASSWORD;
-} while (++currentTry <= TRY_LIMIT && !isPasswordCorrect);
+// do {
+//   isPasswordCorrect = prompt("Input password") === RIGHT_PASSWORD;
+// } while (++currentTry <= TRY_LIMIT && !isPasswordCorrect);
 
-console.log(`Password is ${isPasswordCorrect ? "correct" : "wrong"}`);
+// console.log(`Password is ${isPasswordCorrect ? "correct" : "wrong"}`);
 
-//
+// якщо тіло циклу має виконатися хоч 1 раз, то do..while
+// інакше while
+
+// --- for ---
+// for(початкове-значення; умова-продовження; зміна-лічильника){
+//   тіло циклу
+// }
+
+// const stopPage = 10;
+
+// for (let startPage = 1; startPage <= stopPage; startPage++) {
+//   console.log(startPage);
+// }
+
+// let startPage=1
+// while ( startPage<=stopPage) {
+//   body
+//   startPage++;
+// }
+
+// вивести всі (непарні) значення з 101 до 91 (101, 99, 97, ...)
+
+// const END_NUM = 91;
+
+// for (let startNum = 101; startNum >= END_NUM; startNum -= 2) {
+//   console.log(startNum);
+// }
+
+// let startNumber = 101;
+// let endNumber = 91;
+// for (let i = startNumber; i >= endNumber; i--) {
+//   if (i % 2 !== 0) {
+//     console.log(i);
+//   }
+// }
+
+// 0 (ініціалізація лічильника) виконується 1 раз до циклу
+// 1 (умова продовження циклу)  якщо умова істинна, то виконуємо тіло циклу 2, інакше вихід
+// 2 (тіло циклу)               виконується, якщо умова 1 істинна
+// 3 (зміна лічильника)         виконується після кожної ітерації. Потім перехід на 1
