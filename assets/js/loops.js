@@ -228,3 +228,49 @@
 // console.log("Mul:", mul);
 
 // сформувати табличку з стовпчиками - датами від поточної до кінця місяця
+
+// 'yyyy-mm-dd'
+const currentDate = new Date("2024-02-10");
+const startDate = currentDate.getDate();
+const monthNumber = currentDate.getMonth();
+const isLeapYear = true;
+
+// 0, 2, 4, 6, 7, 9, 11 - 31;
+// 3, 5, 8, 10 - 30;
+// 1 - isLeapYear 29/28;
+let endDate = null;
+if (
+  monthNumber === 0 ||
+  monthNumber === 2 ||
+  monthNumber === 4 ||
+  monthNumber === 6 ||
+  monthNumber === 7 ||
+  monthNumber === 9 ||
+  monthNumber === 11
+) {
+  endDate = 31;
+} else if (
+  monthNumber === 3 ||
+  monthNumber === 5 ||
+  monthNumber === 8 ||
+  monthNumber === 10
+) {
+  endDate = 30;
+} else if (isLeapYear) {
+  endDate = 29;
+} else {
+  endDate = 28;
+}
+// 2
+// const currentYear = currentDate.getFullYear(); //2024
+// const nextMonth = monthNumber + 1;
+// const lastMonthDate = new Date(currentYear, nextMonth, 0);
+// const endDate = lastMonthDate.getDate();
+
+document.write("<table><thead><tr>");
+for (let date = startDate; date <= endDate; date++) {
+  document.write(`<th>${date}</th>`);
+}
+document.write("</tr></thead></table>");
+const isLogin = confirm("????");
+console.log("isLogin :>> ", isLogin);
