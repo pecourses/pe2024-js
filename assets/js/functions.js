@@ -104,27 +104,27 @@
 // pow(4) // 16
 // pow(4, 3) // 64
 
-/**
- * @function pow
- * @param {number} a - Power base
- * @param {number} [exp = 2] - Power exp
- * @returns {number} Base a in power exp
- */
-function pow(a, exp = 2) {
-  //   if (exp === undefined) {
-  //     exp = 2;
-  //   }
-  return a ** exp;
-}
+// /**
+//  * @function pow
+//  * @param {number} a - Power base
+//  * @param {number} [exp = 2] - Power exp
+//  * @returns {number} Base a in power exp
+//  */
+// function pow(a, exp = 2) {
+//   //   if (exp === undefined) {
+//   //     exp = 2;
+//   //   }
+//   return a ** exp;
+// }
 
-console.log(pow(4));
-console.log(pow(4, 3));
+// console.log(pow(4));
+// console.log(pow(4, 3));
 
-// console.log(pow(3));
-// console.log(pow(3, 4));
+// // console.log(pow(3));
+// // console.log(pow(3, 4));
 
-// Написати функцію, яка приймає ім'я і прізвище користувача і генерує картку
-// Якщо прізвище не задано, то виводити Anonimus
+// // Написати функцію, яка приймає ім'я і прізвище користувача і генерує картку
+// // Якщо прізвище не задано, то виводити Anonimus
 
 /**
  * @function userCard
@@ -141,5 +141,31 @@ function userCard(name, surname = "anonimus") {
 
 document.write(userCard("Alex"));
 
-//
-alert();
+// fName();
+// Function Declaration - можна використовувати до оголошення
+// function fName(par1, par2) {
+//   console.log("TEST fName:>> ");
+// }
+
+// Function Expression - не можна використовувати до оголошення
+// const fName1 = function (par1, par2) {
+//   console.log("TEST fName1:>> ");
+// };
+
+// fName1();
+
+// Чисті функції
+// 1) детерміновані - при одних і тих самих параметрах повертатимуть одне і те саме значення
+// 2) без побічних ефектів - завантаження/localStorage
+
+let b = 10;
+
+function notDeterm(a) {
+  //   return a * Math.random();
+  return a * b;
+}
+
+console.log(notDeterm(100));
+
+b = 200;
+console.log(notDeterm(100));
