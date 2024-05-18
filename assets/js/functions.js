@@ -2,129 +2,128 @@
 // одна функція - одна дія
 
 // 1
-// function sayHello() {
-//   document.write(`<p>Hello User!</p>`);
-// }
+function sayHello() {
+  document.write(`<p>Hello User!</p>`);
+}
 
-// sayHello();
+sayHello();
 // 2
-// function sayHello(user, surname) {
-//   // параметри
-//   document.write(`<p>Hello ${user} ${surname}!</p>`);
-// }
+function sayHello(user, surname) {
+  // параметри
+  document.write(`<p>Hello ${user} ${surname}!</p>`);
+}
 
-// sayHello("Test", "Testovych"); // аргументи
-// sayHello("Wally", "Robot"); // аргументи
+sayHello("Test", "Testovych"); // аргументи
+sayHello("Wally", "Robot"); // аргументи
 
 // 3
-// function sayHello(user, surname) {
-//   return `Hello ${user} ${surname}!`;
-// }
+function sayHello(user, surname) {
+  return `Hello ${user} ${surname}!`;
+}
 
-// const helloString = sayHello("Test", "Testovych"); // "Hello Test Testovych"
-// console.log("helloString :>> ", helloString);
-// document.write(`<p>${helloString}</p>`);
+const helloString = sayHello("Test", "Testovych"); // "Hello Test Testovych"
+console.log("helloString :>> ", helloString);
+document.write(`<p>${helloString}</p>`);
 
 // Прописати функцію, яка повертає суму двох чисел
-// function sum(a, b) {
-//   return a + b;
-// }
+function sum(a, b) {
+  return a + b;
+}
 
-// function inputSummand(summandNumber) {
-//   let summand;
+function inputSummand(summandNumber) {
+  let summand;
 
-//   do {
-//     summand = prompt(`Enter ${summandNumber} number`);
-//   } while (!Number.isFinite(+summand) || summand === "");
+  do {
+    summand = prompt(`Enter ${summandNumber} number`);
+  } while (!Number.isFinite(+summand) || summand === "");
 
-//   return Number(summand);
-// }
+  return Number(summand);
+}
 
-// const firstSummand = inputSummand(1);
-// const secondSummand = inputSummand(2);
+const firstSummand = inputSummand(1);
+const secondSummand = inputSummand(2);
 
-// const result = sum(firstSummand, secondSummand);
-// console.log(result);
+const result = sum(firstSummand, secondSummand);
+console.log(result);
 
 // Написати функцію isAdult для визначення чи повнолітній, чи ні (=> false/true)
 
-// function isAdult(age) {
-//   return age >= 18;
-// }
+function isAdult(age) {
+  return age >= 18;
+}
 
-// const age = 18;
-// console.log(isAdult(age));
+const age = 18;
+console.log(isAdult(age));
 
 // згенерувати розмітку для 3х новин (заголовок, тіло, дата)
 // вивести попередження, якщо новини переглядає неповнолітній
 // для сьогонішніх новин (підсвітити червоним заголок, New!)
 
-// const age = 18;
+const age = 18;
 
-// // Змінні для заголовка новини
-// const newsTitle1 = "Lorem ipsum dolor sit amet";
-// const newsTitle2 = "Consectetur adipiscing elit";
-// const newsTitle3 = "Sed do eiusmod tempor";
-// // Змінні для тіла новини
-// const newsBody1 =
-//   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-// const newsBody2 =
-//   "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-// const newsBody3 =
-//   "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
-// // Змінні для дати новини
-// const newsDate1 = new Date("2024-05-18");
-// const newsDate2 = new Date("2024-05-17");
-// const newsDate3 = new Date("2024-05-16");
+// Змінні для заголовка новини
+const newsTitle1 = "Lorem ipsum dolor sit amet";
+const newsTitle2 = "Consectetur adipiscing elit";
+const newsTitle3 = "Sed do eiusmod tempor";
 
-// function news(newsTitle, newsBody, newsDate) {
-//   const nowSpan =
-//     newsDate.toLocaleDateString() === new Date().toLocaleDateString()
-//       ? " <span class='todayNews'>New!</span>"
-//       : "";
+// Змінні для тіла новини
+const newsBody1 =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+const newsBody2 =
+  "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
+const newsBody3 =
+  "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
 
-//   return `
-//       <article>
-//         <h3>${newsTitle}${nowSpan}</h3>
-//         <p>${newsBody}</p>
-//         <p>${newsDate.toDateString()}</p>
-//       </article>`;
-// }
-// if (age < 18) {
-//   document.write("Контент може містити ...");
-// }
-// document.write(
-//   news(newsTitle1, newsBody1, newsDate1),
-//   news(newsTitle2, newsBody2, newsDate2),
-//   news(newsTitle3, newsBody3, newsDate3)
-// );
+// Змінні для дати новини
+const newsDate1 = new Date("2024-05-18");
+const newsDate2 = new Date("2024-05-17");
+const newsDate3 = new Date("2024-05-16");
+
+function news(newsTitle, newsBody, newsDate) {
+  const nowSpan =
+    newsDate.toLocaleDateString() === new Date().toLocaleDateString()
+      ? " <span class='todayNews'>New!</span>"
+      : "";
+
+  return `
+      <article>
+        <h3>${newsTitle}${nowSpan}</h3>
+        <p>${newsBody}</p>
+        <p>${newsDate.toDateString()}</p>
+      </article>`;
+}
+if (age < 18) {
+  document.write("Контент може містити ...");
+}
+document.write(
+  news(newsTitle1, newsBody1, newsDate1),
+  news(newsTitle2, newsBody2, newsDate2),
+  news(newsTitle3, newsBody3, newsDate3)
+);
 
 // Значення за замовчуванням, типові значення
 
-// pow(4) // 16
-// pow(4, 3) // 64
+pow(4); // 16
+pow(4, 3); // 64
 
-// /**
-//  * @function pow
-//  * @param {number} a - Power base
-//  * @param {number} [exp = 2] - Power exp
-//  * @returns {number} Base a in power exp
-//  */
-// function pow(a, exp = 2) {
-//   //   if (exp === undefined) {
-//   //     exp = 2;
-//   //   }
-//   return a ** exp;
-// }
+/**
+ * @function pow
+ * @param {number} a - Power base
+ * @param {number} [exp = 2] - Power exp
+ * @returns {number} Base a in power exp
+ */
+function pow(a, exp = 2) {
+  //   if (exp === undefined) {
+  //     exp = 2;
+  //   }
+  return a ** exp;
+}
 
-// console.log(pow(4));
-// console.log(pow(4, 3));
+console.log(pow(4));
+console.log(pow(4, 3));
 
-// // console.log(pow(3));
-// // console.log(pow(3, 4));
-
-// // Написати функцію, яка приймає ім'я і прізвище користувача і генерує картку
-// // Якщо прізвище не задано, то виводити Anonimus
+// Написати функцію, яка приймає ім'я і прізвище користувача і генерує картку
+// Якщо прізвище не задано, то виводити Anonimus
 
 /**
  * @function userCard
@@ -141,18 +140,18 @@ function userCard(name, surname = "anonimus") {
 
 document.write(userCard("Alex"));
 
-// fName();
+fName();
 // Function Declaration - можна використовувати до оголошення
-// function fName(par1, par2) {
-//   console.log("TEST fName:>> ");
-// }
+function fName(par1, par2) {
+  console.log("TEST fName:>> ");
+}
 
 // Function Expression - не можна використовувати до оголошення
-// const fName1 = function (par1, par2) {
-//   console.log("TEST fName1:>> ");
-// };
+const fName1 = function (par1, par2) {
+  console.log("TEST fName1:>> ");
+};
 
-// fName1();
+fName1();
 
 // Чисті функції
 // 1) детерміновані - при одних і тих самих параметрах повертатимуть одне і те саме значення
