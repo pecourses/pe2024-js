@@ -96,9 +96,9 @@
 
 // Методи
 
-function getFullName() {
-  return `${this.firstName} ${this.lastName}`;
-}
+// function getFullName() {
+//   return `${this.firstName} ${this.lastName}`;
+// }
 
 const user = {
   firstName: "Test",
@@ -108,21 +108,26 @@ const user = {
   //   getFullName: function () {
   //     return `${user.firstName} ${user.lastName}`;
   //   },
-  //   getFullName() {
-  //     // console.log("this :>> ", this); -- контекст
-  //     return `${this.firstName} ${this.lastName}`;
-  //   },
-  getFullName: getFullName,
+  getFullName() {
+    // console.log("this :>> ", this); -- контекст
+    return `${this.firstName} ${this.lastName}`;
+  },
+  //   getFullName: getFullName,
+  changePassw(newPassw) {
+    this.passw = newPassw;
+  },
 };
 
-const user1 = {
-  firstName: "Test1",
-  lastName: "Testovych1",
-  passw: "qwerty1",
-  getFullName,
-};
+// const user1 = {
+//   firstName: "Test1",
+//   lastName: "Testovych1",
+//   passw: "qwerty1",
+//   getFullName,
+// };
 
 console.log(user.getFullName());
-console.log(user1.getFullName());
+// console.log(user1.getFullName());
+user.changePassw(prompt("new password"));
+console.log("user :>> ", user);
 
 document.write(`<h2>${user.getFullName()}</h2>`);
