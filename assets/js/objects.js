@@ -165,10 +165,67 @@
 //   console.log(`${key}: ${cat[key]}`);
 // }
 
-const cat1 = {};
+// const cat1 = {};
 
-for (let i = 0; i < 3; i++) {
-  let key = prompt("Enter the key");
-  let value = prompt("Enter the value");
-  cat1[key] = value;
+// for (let i = 0; i < 3; i++) {
+//   let key = prompt("Enter the key");
+//   let value = prompt("Enter the value");
+//   cat1[key] = value;
+// }
+
+// Функція-конструктор
+
+function User(name, surname, userAge, userEmail, isMale) {
+  //   const this = {};
+  this.firstName = name;
+  this.lastName = surname;
+  this.age = userAge;
+  this.email = userEmail;
+  this.isMale = isMale;
+  //   this.changeEmail = function (newEmail) {
+  //     this.email = newEmail;
+  //   };
+  //   return this;
 }
+
+User.prototype.changeEmail = function (newEmail) {
+  this.email = newEmail;
+};
+
+// Статична властивість
+User.typename = "User";
+
+const user1 = new User("Test", "Testovych", 23, "mail@mail.com", true);
+const user2 = new User("Wally", "Robot", 2, "wally@robot.mail", true);
+
+user1.changeEmail("newmail@com");
+
+console.log("user1 :>> ", user1);
+
+// Створити функцію-конструктор для опису _____  на мінімум 3 властивості.
+// Створити об'єкт за допомогою неї
+function Car(brand, model, yearOfProduction, number, color) {
+  this.brand = brand;
+  this.model = model;
+  this.yearOfProduction = yearOfProduction;
+  this.number = number;
+  this.color = color;
+}
+
+const car1 = new Car("Audi", "RS8", 2021, 7777, "black");
+car1.brand = "BMW";
+car1.age = 30;
+console.log(car1);
+
+// Визнечання типу
+console.log(typeof 4);
+console.log(typeof {});
+console.log(typeof function () {});
+console.log(typeof user1);
+console.log(typeof car1);
+console.log(typeof new Date());
+
+// Чи є інстансом вказаного типу об'єктів
+console.log("user1 instanceof User", user1 instanceof Object); // true
+console.log("user1 instanceof User", user1 instanceof User); // true
+console.log("user1 instanceof User", user1 instanceof Car); // false
