@@ -96,38 +96,79 @@
 
 // Методи
 
-// function getFullName() {
-//   return `${this.firstName} ${this.lastName}`;
-// }
-
-const user = {
-  firstName: "Test",
-  lastName: "Testovych",
-  passw: "qwerty",
-  age: 23,
-  //   getFullName: function () {
-  //     return `${user.firstName} ${user.lastName}`;
-  //   },
-  getFullName() {
-    // console.log("this :>> ", this); -- контекст
-    return `${this.firstName} ${this.lastName}`;
-  },
-  //   getFullName: getFullName,
-  changePassw(newPassw) {
-    this.passw = newPassw;
-  },
-};
-
-// const user1 = {
-//   firstName: "Test1",
-//   lastName: "Testovych1",
-//   passw: "qwerty1",
-//   getFullName,
+// const user = {
+//   firstName: "Test",
+//   lastName: "Testovych",
+//   passw: "qwerty",
+//   age: 23,
+//   getFullName() {
+//     return `${this.firstName} ${this.lastName}`;
+//   },
+//   changePassw(newPassw) {
+//     this.passw = newPassw;
+//   },
 // };
 
-console.log(user.getFullName());
-// console.log(user1.getFullName());
-user.changePassw(prompt("new password"));
-console.log("user :>> ", user);
+// console.log(user.getFullName());
 
-document.write(`<h2>${user.getFullName()}</h2>`);
+// // user.changePassw(prompt("new password"));
+// console.log("user :>> ", user);
+
+// document.write(`<h2>${user.getFullName()}</h2>`);
+
+// Task: Написати метод для зміни кольору машини та визначення її віку
+// const car = {
+//   brand: "Audi",
+//   model: "A4",
+//   year: 2013,
+//   number: "CE1234BB",
+//   color: "black",
+//   owner: {
+//     firstName: "Test",
+//     lastName: "Testovich",
+//   },
+//   changeColor(newColor) {
+//     this.color = newColor;
+//   },
+//   getAge() {
+//     return new Date().getFullYear() - this.year;
+//   },
+// };
+
+// // car.changeColor(prompt("new color"));
+// console.log(car.getAge());
+// console.log(car);
+
+// Виведення в консоль як об'єкт
+// console.dir(car);
+// console.dir(car.getAge);
+// console.dir(new Date());
+
+// Перебір об'єктів
+// for (const key in car) {
+//   console.log("key :>> ", key, car[key]);
+// }
+// // Обчислювальні властивості - car[key]
+
+// const propName = "color";
+// console.log("color:", car[propName]);
+
+// Ввести для об'єкту (кішки) 3 імені властивості і значення для них
+
+// const cat = {
+//   name: prompt("Enter the cat name", "Stepan"),
+//   age: prompt("Enter the cat age", "3"),
+//   color: prompt("Enter the cat color", "black"),
+// };
+
+// for (const key in cat) {
+//   console.log(`${key}: ${cat[key]}`);
+// }
+
+const cat1 = {};
+
+for (let i = 0; i < 3; i++) {
+  let key = prompt("Enter the key");
+  let value = prompt("Enter the value");
+  cat1[key] = value;
+}
