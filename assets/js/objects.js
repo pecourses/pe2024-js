@@ -93,3 +93,36 @@
 
 // const correctNewsCopy2 = { ...news };
 // console.log("correctNewsCopy2 === news :>> ", correctNewsCopy2 === news);
+
+// Методи
+
+function getFullName() {
+  return `${this.firstName} ${this.lastName}`;
+}
+
+const user = {
+  firstName: "Test",
+  lastName: "Testovych",
+  passw: "qwerty",
+  age: 23,
+  //   getFullName: function () {
+  //     return `${user.firstName} ${user.lastName}`;
+  //   },
+  //   getFullName() {
+  //     // console.log("this :>> ", this); -- контекст
+  //     return `${this.firstName} ${this.lastName}`;
+  //   },
+  getFullName: getFullName,
+};
+
+const user1 = {
+  firstName: "Test1",
+  lastName: "Testovych1",
+  passw: "qwerty1",
+  getFullName,
+};
+
+console.log(user.getFullName());
+console.log(user1.getFullName());
+
+document.write(`<h2>${user.getFullName()}</h2>`);
