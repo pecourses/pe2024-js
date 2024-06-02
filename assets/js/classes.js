@@ -81,3 +81,71 @@ try {
 } catch (err) {
   console.log("err :>> ", err);
 }
+
+// Task:
+// - реалізувати клас для телефонів (марка, модель, колір, ціна, рік випуску)
+// - реалізувати метод для розрахунку віку телефону (*у вигляді геттеру)
+// - *прописати сеттер для кольору. колір може бути один зі списку
+// ['white', 'red', 'black', 'yellow', 'green', 'blue', 'grey']
+// - створити метод render для додавання телефону в розмітку
+// *у випадку помилки вивести повідомлення, що виникла помилка
+// - створити екземпляр класу, викликати для нього метод(и)
+class Phone {
+  constructor(brand, model, color, price, year) {
+    this._brand = brand;
+    this._model = model;
+    this.color = color;
+    this._price = price;
+    this._year = year;
+  }
+
+  getAge() {
+    return new Date().getFullYear() - this._year;
+  }
+  // або
+  get age() {
+    return new Date().getFullYear() - this._year;
+  }
+
+  render() {
+    document.write(`
+      <article>
+          <h3>${this._brand}</h3>
+          <p>${this._model} ${this._color} ${this._price} ${this._price}</p>
+      </article>
+      
+      `);
+  }
+
+  set color(value) {
+    const VALID_COLORS = [
+      "white",
+      "red",
+      "black",
+      "yellow",
+      "green",
+      "blue",
+      "grey",
+    ];
+    if (!VALID_COLORS.includes(value)) {
+      throw new RangeError("Input other color");
+    }
+    this._color = value;
+  }
+  get color() {
+    return this._color;
+  }
+}
+
+try {
+  const myPhone = new Phone("Apple", "Iphone 12 Pro Max", "pink", 20000, 2004);
+  console.log(myPhone.age);
+  // або
+  console.log(myPhone.getAge());
+  myPhone.render();
+  myPhone.color = "blue";
+  console.log(myPhone.color);
+} catch (error) {
+  document.write("<p>Error</p>");
+  console.error(error);
+}
