@@ -113,7 +113,7 @@ class Phone {
           <h3>${this._brand}</h3>
           <p>${this._model} ${this._color} ${this._price} ${this._price}</p>
       </article>
-      
+
       `);
   }
 
@@ -149,3 +149,99 @@ try {
   document.write("<p>Error</p>");
   console.error(error);
 }
+
+// Об'єктно-орієнтоване програмування ------------------------------------------
+
+// Принципи ООП:
+// інкапсуляція - приховання логіки (особливостей реалізації)
+// спадкування  - перевикористання структури та логіки (альт. назва - спеціалізація, "is a")
+// поліморфізм  - можливість через однаковий інтерфейс працювати з різними типами (в js поліморфізм підтипів)
+
+// базовий / батьківський
+class User {
+  constructor(name, surname, age, isMale, email) {
+    this.firstName = name;
+    this.lastName = surname;
+    this.age = age;
+    this.isMale = isMale;
+    this.email = email;
+    // this.isBanned = false;
+  }
+
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+
+const user1 = new User("Test", "Testovych", 25, false, "test@test.com");
+
+// дочірній / спадкоємець
+class Moderator extends User {
+  constructor(name, surname, age, isMale, email, permission) {
+    super(name, surname, age, isMale, email); // виклик конструктора базового класу
+    this.permission = permission;
+  }
+
+  sendMessage(user, message) {
+    return `Moderator ${this.getFullName()} send message "${message}" to user ${user.getFullName()}`;
+  }
+}
+
+const moderator1 = new Moderator(
+  "Mod",
+  "Modovych",
+  25,
+  false,
+  "test@test.com",
+  { canRead: true, canWrite: true }
+);
+
+console.log(moderator1.getFullName());
+
+document.write(moderator1.sendMessage(user1, "Your wessage is beautiful"));
+
+// Task: Реалізувати клас Admin, який є модератором, і на додачу має
+// властивість category (1,2)
+// реалізує логіку (забанити або зняти бан з конкретного користувача):
+// - bann
+// - unbann
+
+// Створити об'єкт класу Admin, протустувати роботу методів bann, unbann
+
+class Admin extends Moderator {
+  constructor(name, surname, age, isMale, email, permission, category) {
+    super(name, surname, age, isMale, email, permission);
+    this._category = category;
+  }
+
+  ban(user) {
+    user.isBanned = true;
+  }
+
+  unban(user) {
+    user.isBanned = false;
+  }
+
+  // перевизначення
+  sendMessage(user, message) {
+    return `Administrator ${this.getFullName()} send message "${message}" to user ${user.getFullName()}`;
+  }
+}
+
+const admin1 = new Admin(
+  "Admin",
+  "Adminovych",
+  25,
+  false,
+  "test@test.com",
+  { canRead: true, canWrite: true },
+  1
+);
+
+admin1.ban(user1);
+console.log(user1.isBanned);
+admin1.unban(user1);
+console.log(user1.isBanned);
+
+console.log(admin1.getFullName());
+document.write(`<p>${admin1.sendMessage(user1, "blablabla")}</p>`);
