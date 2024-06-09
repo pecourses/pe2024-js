@@ -155,7 +155,7 @@ try {
 // Принципи ООП:
 // інкапсуляція - приховання логіки (особливостей реалізації)
 // спадкування  - перевикористання структури та логіки (альт. назва - спеціалізація, "is a")
-// поліморфізм  - можливість через однаковий інтерфейс працювати з різними типами (в js поліморфізм підтипів)
+// поліморфізм  - можливість через однаковий інтерфейс працювати з різними типами (в js поліморфізм підтипів: перевизначення, абстр.класи)
 
 // базовий / батьківський
 class User {
@@ -245,3 +245,55 @@ console.log(user1.isBanned);
 
 console.log(admin1.getFullName());
 document.write(`<p>${admin1.sendMessage(user1, "blablabla")}</p>`);
+
+// абстрактний клас - клас без реалізації
+
+// описує спільний інтерфейс для ієрархії - прояв поліморфізму
+
+class Figure {
+  constructor(name) {
+    this.name = name;
+  }
+  getArea() {
+    return null;
+  }
+}
+
+class Square extends Figure {
+  constructor(a) {
+    super("square");
+    this.a = a;
+  }
+  getArea() {
+    return this.a * this.a;
+  }
+}
+
+const square1 = new Square(4);
+console.log("square1.getArea() :>> ", square1.getArea());
+console.log("square1.name :>> ", square1.name);
+
+// Task: Реалізувати клас для Rectangle
+class Rectangle extends Figure {
+  constructor(a, b) {
+    super("rectangle");
+    this.a = a;
+    this.b = b;
+  }
+  getArea() {
+    return this.a * this.b;
+  }
+}
+
+const rectangle1 = new Rectangle(4, 5);
+console.log("rectangle1.getArea() :>> ", rectangle1.getArea());
+console.log("rectangle1.name :>> ", rectangle1.name);
+
+function calcArea(fig) {
+  // всі інстанси ієрархії є
+  if (fig instanceof Figure) {
+    return fig.getArea();
+  }
+}
+
+console.log("calcArea(rectangle1) :>> ", calcArea(square1));
