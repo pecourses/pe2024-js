@@ -146,3 +146,36 @@ console.log(
     /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&.]).{8,16}$/
   )
 );
+
+// Методи з використанням регулярок
+
+// replace - замінити частину рядка за критерієм
+const str1 = "Fkjhjk       jsdjfs dsfsdf   dsfsfd    sdfsdfsf"; // s -> a
+const resultStr1 = str1.replace(/\s{2,}/g, " ");
+console.log(resultStr1);
+
+// Task: Прибрати ненормативну лексику з повідомлень (fuck, ass, asshole) => ###
+const str2 = "Fuck you. )))) You are asshole"; // '### you. )))) You are ###'
+const newStr2 = str2.replace(/\b(fuck|ass|asshole)\b/gi, "###");
+
+console.log(newStr2);
+
+// const str3 =
+//   "Fuck you dude! AAAAAASSHOLE!! FuCCCKKK Fuck Fuck Fuck Fuck Fuck!!!";
+// const str3Result = str3.replace(/(f+u+c+k+|a+s{2,}h+o+l+e+)/gi, "####");
+// console.log(str3Result);
+
+// split - розділення на масив за вказаним роздільником
+// Отримати масив слів з рядка
+const str4 = "Fkjhjk       jsdjfs dsfsdf   dsfsfd    sdfsdfsf";
+const resultStr4 = str4.split(/\s+/);
+console.log(resultStr4);
+
+// Task: Отримати масив з рядка дати з роком, місяцем, датою
+// '1999-01-01' => ['1999', '01', '01']
+// '1999/01/01' => ['1999', '01', '01']
+// '1999.01.01' => ['1999', '01', '01']
+
+const dateStr = "1999-01-01";
+const dateArr = dateStr.split(/[-/.]/);
+console.log(dateArr);
